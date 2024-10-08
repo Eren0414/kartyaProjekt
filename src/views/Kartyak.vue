@@ -1,14 +1,8 @@
 <template>
-  <h2>Karakter kártyák</h2>
   <!-- Kártyák -->
   <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 karakter-kartyak">
-    <KarakterKartya
-      v-for="karakter in szurtKarakterek"
-      :key="karakter.id"
-      :id="karakter.id"
-      @karaterModalReszletKezeles="reszletModalKezelo"
-      class="karakter-kartya"
-    >
+    <KarakterKartya v-for="karakter in szurtKarakterek" :key="karakter.id" :id="karakter.id"
+      @karaterModalReszletKezeles="reszletModalKezelo" class="karakter-kartya">
       <!-- V-slots -->
       <template v-slot:kep>
         <img :src="karakter.kep" :alt="karakter.cim" class="karakter-kep" />
@@ -22,11 +16,8 @@
 
   <!-- Kartyainfo Modal -->
   <KartyaInfo :cim="keresJelol(kivalasztottKarakter.cim)">
-    <img
-      :src="kivalasztottKarakter.kep"
-      :alt="kivalasztottKarakter.cim"
-      class="float-start col-12 col-sm-6 col-lg-4 me-1 p-2 my-picture"
-    />
+    <img :src="kivalasztottKarakter.kep" :alt="kivalasztottKarakter.cim"
+      class="float-start col-12 col-sm-6 col-lg-4 me-1 p-2 my-picture" />
     <div v-html="keresJelol(szovegFormatum)"></div>
   </KartyaInfo>
 </template>
@@ -103,8 +94,8 @@ export default {
           kep: "major.png",
           szoveg: [
             "SS Sturmbannführer Montina Max, amelyet inkább The címe ismert Őrnagy, a Hellsing által létrehozott sorozat Kohta Hirano. Ő hangolja Nobuo Tobita japánul és Gildart Jackson az angol dub-ban.",
-            "Az SS volt hadnagya, Adolf Hitler kiadott egy speciális parancsot (# 666), amely egy szigorúan titkos projekt felelősségére helyezte őt, amelynek fő hangsúlya a mesterséges vámpírizációs folyamat tökéletesítése volt.", 
-        ],
+            "Az SS volt hadnagya, Adolf Hitler kiadott egy speciális parancsot (# 666), amely egy szigorúan titkos projekt felelősségére helyezte őt, amelynek fő hangsúlya a mesterséges vámpírizációs folyamat tökéletesítése volt.",
+          ],
         },
         {
           id: 7,
@@ -112,9 +103,9 @@ export default {
           kep: "schrodinger.png",
           szoveg: [
             "Tisztviselő Schrödinger jelentős antagonista a Hellsing által létrehozott sorozat Kohta Hirano. Hangzott Ryoko Shiraishi a japán alcsoportban és Laura Bailey az angol dub-ban.",
-            "Schrödinger a hadtiszt tisztségét töltötte be és a Millennium katonai egység A Werwolf Squad. Ő egy spritált, gyors szellemes és éles nyelvű wacat, akinek kiemelkedő füle elárulja démoni természetét. Ő szolgál Az őrnagy vitathatatlanul, és gyakran a gonosz büntetés fogadó végén van.", 
+            "Schrödinger a hadtiszt tisztségét töltötte be és a Millennium katonai egység A Werwolf Squad. Ő egy spritált, gyors szellemes és éles nyelvű wacat, akinek kiemelkedő füle elárulja démoni természetét. Ő szolgál Az őrnagy vitathatatlanul, és gyakran a gonosz büntetés fogadó végén van.",
             "Schrödinger természete örökké mindenhol és sehol, lényegében lehetővé teszi, hogy bárhol megjelenhessen, akár a saját elméjében is."
-        ],
+          ],
         },
         {
           id: 8,
@@ -125,18 +116,18 @@ export default {
             "Seras lett a vámpír által Alucard hogy megmentse őt a mellkasban levő halálos lövésektől, amelyeket ő is okozott a lelkész.",
             "Ettől a ponttól kezdve segíti a Hellsing szervezet a megnövekedett vámpír támadások ellen, és később közeli társává válik Sir Integra és romantikus kapcsolatot alakít ki Pip Vernedead.",
             "Seras egy Draculina, egy olyan kifejezés, amely a Dracul vérvonal női tagjaira utal, mivel Alucard vámpírrá változtatta."
-        ],
+          ],
         },
         {
           id: 9,
           cim: "Wingates",
           kep: "wingates.png",
           szoveg: [
-            "Uram Integrált Fairbrook Wingates Hellsing, Integuraru Faruburuke Wingētsu Herushingu-Kyō, egyike a Hellsing által létrehozott sorozat Kohta Hirano, mellett Alucard és Seras Victoria.", 
+            "Uram Integrált Fairbrook Wingates Hellsing, Integuraru Faruburuke Wingētsu Herushingu-Kyō, egyike a Hellsing által létrehozott sorozat Kohta Hirano, mellett Alucard és Seras Victoria.",
             "Hellsing mindkét adaptációjában hangot ad neki Yoshiko Sakakibara a japán alcsoportban és Victoria Harwood az angol dub - ban.Kaori Mizuhashi és Tricia Dicksonjapánul, illetve angolul adták hangjukat fiatalabb iterációjához, amely visszacsatolásokban jelent meg.",
-            "A protestáns lovagok 22 éves nemesi tagja, aki a Hellsing család vezetője és utolsó tagja; leszármazottja Helsing professzor, a Hellsing szervezet, és Hellsing vámpírjának jelenlegi mestere, Alucard.", 
+            "A protestáns lovagok 22 éves nemesi tagja, aki a Hellsing család vezetője és utolsó tagja; leszármazottja Helsing professzor, a Hellsing szervezet, és Hellsing vámpírjának jelenlegi mestere, Alucard.",
             "Karizmával és hazafisággal vezeti a Hellsing Szervezetet, és egyike azon kevés embernek, aki képes ellenállni Alucard személyiségének erőinek és parancsolni tiszteletét."
-        ],
+          ],
         },
       ],
     };
@@ -174,66 +165,107 @@ export default {
       }
       return this.karakterek.filter(k => {
         return k.cim.toLowerCase().includes(this.keresoSzo.toLowerCase()) ||
-        k.szoveg.some(k => k.toLowerCase().includes(this.keresoSzo.toLowerCase()))
+          k.szoveg.some(k => k.toLowerCase().includes(this.keresoSzo.toLowerCase()))
       });
     },
   },
 };
 </script>
 
-<style scoped>
+<style scope>
+::-webkit-scrollbar {
+  display: none;
+}
+
 .karakter-kartyak {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 10px;
+  gap: 15px;
 }
 
 .karakter-kartya {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  background-color: #f9f9f9;
-  height: 100%;
+  background: #2c2c2c;
+  border: 1px solid #444;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 20%;
+  /* Kártyák szélessége */
 }
 
-.karakter-kartya img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
+.karakter-kartya:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 10px 20px rgba(255, 0, 0, 0.3);
+  cursor: url('public/cursor.png'), auto;
 }
 
 .karakter-kep {
   width: 100%;
-  height: 150px; 
+  height: 200px;
   object-fit: cover;
+  filter: brightness(0.7);
   border-radius: 8px;
+  transition: filter 0.3s;
+}
+
+.karakter-kartya:hover .karakter-kep {
+  filter: brightness(1);
 }
 
 .karakter-cim {
-  font-weight: bold;
-  text-align: center;
   margin-top: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.row-cols-1 .karakter-kartya {
-  margin-bottom: 20px;
+.karakter-kartyak+div {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff6347;
+  margin-top: 20px;
 }
 
-@media (min-width: 768px) {
-  .row-cols-md-3 .karakter-kartya {
-    flex-basis: calc(33.3333% - 20px); 
-    margin-bottom: 20px;
-  }
+/* Hozzáadás sötétebb háttér és vérhatás a kiemeléshez */
+span.mark {
+  background-color: rgba(255, 0, 0, 0.3);
+  color: #fff;
+  padding: 2px 4px;
 }
 
-@media (min-width: 992px) {
-  .row-cols-lg-4 .karakter-kartya {
-    flex-basis: calc(25% - 20px); 
-    margin-bottom: 20px;
-  }
+/* Fényhatás hozzáadása */
+.karakter-kartya::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.karakter-kartya:hover::after {
+  opacity: 1;
+}
+
+/* Vércsepp háttér a kártya alatt */
+.karakter-kartya::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  /* Az alaphelyzet a kártya alatt */
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 </style>
