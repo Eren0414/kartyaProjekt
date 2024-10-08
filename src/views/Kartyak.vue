@@ -102,7 +102,8 @@ export default {
           cim: "Major",
           kep: "major.png",
           szoveg: [
-            "Nincs elérhető leírás ennél a karakterről."
+            "SS Sturmbannführer Montina Max, amelyet inkább The címe ismert Őrnagy, a Hellsing által létrehozott sorozat Kohta Hirano. Ő hangolja Nobuo Tobita japánul és Gildart Jackson az angol dub-ban.",
+            "Az SS volt hadnagya, Adolf Hitler kiadott egy speciális parancsot (# 666), amely egy szigorúan titkos projekt felelősségére helyezte őt, amelynek fő hangsúlya a mesterséges vámpírizációs folyamat tökéletesítése volt.", 
         ],
         },
         {
@@ -110,7 +111,9 @@ export default {
           cim: "Schrodinger",
           kep: "schrodinger.png",
           szoveg: [
-            "Nincs elérhető leírás ennél a karakterről."
+            "Tisztviselő Schrödinger jelentős antagonista a Hellsing által létrehozott sorozat Kohta Hirano. Hangzott Ryoko Shiraishi a japán alcsoportban és Laura Bailey az angol dub-ban.",
+            "Schrödinger a hadtiszt tisztségét töltötte be és a Millennium katonai egység A Werwolf Squad. Ő egy spritált, gyors szellemes és éles nyelvű wacat, akinek kiemelkedő füle elárulja démoni természetét. Ő szolgál Az őrnagy vitathatatlanul, és gyakran a gonosz büntetés fogadó végén van.", 
+            "Schrödinger természete örökké mindenhol és sehol, lényegében lehetővé teszi, hogy bárhol megjelenhessen, akár a saját elméjében is."
         ],
         },
         {
@@ -118,7 +121,10 @@ export default {
           cim: "Victoria",
           kep: "victoria.png",
           szoveg: [
-            "Nincs elérhető leírás ennél a karakterről."
+            "Seras Victoria egyike a Hellsing által létrehozott sorozat Kohta Hirano, mellett Alucard és Sir Integra. Mindkét adaptációban Hellsing, ő hangolja Fumiko Orikasa a japán alcsoportban és K. Szürke az angol dub-ban.",
+            "Seras lett a vámpír által Alucard hogy megmentse őt a mellkasban levő halálos lövésektől, amelyeket ő is okozott a lelkész.",
+            "Ettől a ponttól kezdve segíti a Hellsing szervezet a megnövekedett vámpír támadások ellen, és később közeli társává válik Sir Integra és romantikus kapcsolatot alakít ki Pip Vernedead.",
+            "Seras egy Draculina, egy olyan kifejezés, amely a Dracul vérvonal női tagjaira utal, mivel Alucard vámpírrá változtatta."
         ],
         },
         {
@@ -126,7 +132,10 @@ export default {
           cim: "Wingates",
           kep: "wingates.png",
           szoveg: [
-            "Nincs elérhető leírás ennél a karakterről."
+            "Uram Integrált Fairbrook Wingates Hellsing, Integuraru Faruburuke Wingētsu Herushingu-Kyō, egyike a Hellsing által létrehozott sorozat Kohta Hirano, mellett Alucard és Seras Victoria.", 
+            "Hellsing mindkét adaptációjában hangot ad neki Yoshiko Sakakibara a japán alcsoportban és Victoria Harwood az angol dub - ban.Kaori Mizuhashi és Tricia Dicksonjapánul, illetve angolul adták hangjukat fiatalabb iterációjához, amely visszacsatolásokban jelent meg.",
+            "A protestáns lovagok 22 éves nemesi tagja, aki a Hellsing család vezetője és utolsó tagja; leszármazottja Helsing professzor, a Hellsing szervezet, és Hellsing vámpírjának jelenlegi mestere, Alucard.", 
+            "Karizmával és hazafisággal vezeti a Hellsing Szervezetet, és egyike azon kevés embernek, aki képes ellenállni Alucard személyiségének erőinek és parancsolni tiszteletét."
         ],
         },
       ],

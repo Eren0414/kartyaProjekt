@@ -9,7 +9,7 @@ export default {
     };
   },
   watch: {
-    searchWordInput(data){
+    searchWordInput(data) {
       if (!data) {
         this.keresoSzo = null;
       }
@@ -21,6 +21,11 @@ export default {
       keresoSzoInput: null,
     };
   },
+  computed: {
+    isHomePage() {
+      return this.$route.path === "/";
+    }
+  }
 };
 </script>
 
@@ -38,28 +43,21 @@ export default {
           <RouterLink to="/kartyak">Kártyák</RouterLink>
         </div>
 
-        <div class="d-flex align-items-center" role="search">
-        <label for="keresoSzo" class="form-label text-nowrap m-0"
-          >Kereső:
-        </label>
-        <input
-          id="keresoSzo"
-          class="form-control me-2 ms-2"
-          type="search"
-          aria-label="Keresés"
-          v-model="keresoSzoInput"
-        />
-        <button class="btn btn-outline-success" type="submit"
-          @click="keresoSzo = keresoSzoInput"
-        >Keresés</button>
-      </div>
+        <div v-if="!isHomePage" class="d-flex align-items-center" role="search">
+          <label for="keresoSzo" class="form-label text-nowrap m-0">Kereső:</label>
+          <input
+            id="keresoSzo"
+            class="form-control me-2 ms-2"
+            type="search"
+            aria-label="Keresés"
+            v-model="keresoSzoInput"
+          />
+          <button class="btn btn-outline-success" type="submit" @click="keresoSzo = keresoSzoInput">Keresés</button>
+        </div>
       </nav>
     </div>
   </header>
-
-  <div class="my-border p-2">
     <RouterView />
-  </div>
 </template>
 
 <style scoped>
