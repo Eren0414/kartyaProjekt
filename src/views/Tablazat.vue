@@ -1,54 +1,66 @@
 <template>
-    <div class="container-fluid">
-        <div class="row justify-content-center"> <!-- Flexbox használata a középre igazításhoz -->
-            <!-- Táblázatos megjelenítés a karakterekről -->
-            <div class="col-md-8">
-                <table class="table table-dark table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Név</th>
-                            <th scope="col">Hovatartozás</th>
-                            <th scope="col">Becenév</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="character in filteredCharacters" :key="character.id">
-                            <td>{{ character.cim }}</td>
-                            <td>{{ character.affiliation }}</td>
-                            <td>{{ character.alias }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="container-fluid row">
+      <div class="row justify-content-center align-items-start">
+        <!-- Táblázat a karakterekről -->
+        <div class="col-md-5">
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Név</th>
+                <th scope="col">Hovatartozás</th>
+                <th scope="col">Becenév</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="karakter in filteredKarakterek" :key="karakter.id" @click="selectKarakter(karakter)">
+                <td>{{ karakter.nev }}</td>
+                <td>{{ karakter.hovatartozas }}</td>
+                <td>{{ karakter.becenev }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+  
+        <!-- Kép megjelenítése a jobb oldalon, ha kiválasztott karakter van -->
+        <div class="col-md-5" v-if="selectedKarakter">
+          <img :src="`/public/${selectedKarakter.nev.toLowerCase()}.png`" alt="Kép" class="selected-image">
+          <h2>{{ selectedKarakter.nev }}</h2>
+        </div>
+      </div>
     </div>
-</template>
+  </template>
 
 <script>
 export default {
-    inject: ['keresoSzo'], // A kereső szó hozzáférhetővé tétele
+    inject: ['keresoSzo'],
     data() {
         return {
-            characters: [
-                { id: 1, cim: "Alucard", affiliation: "Hellsing Organization", alias: "Dracula" },
-                { id: 2, cim: "Anderson", affiliation: "Iscariot", alias: "Paladin" },
-                { id: 3, cim: "Captain", affiliation: "Millennium", alias: "The Wolfman" },
-                { id: 4, cim: "Dornez", affiliation: "Hellsing Organization", alias: "Angel of Death" },
-                { id: 5, cim: "Major", affiliation: "Millennium", alias: "Sturmbannführer" },
-                { id: 7, cim: "Schrodinger", affiliation: "Millennium", alias: "The Catboy" },
-                { id: 8, cim: "Victoria", affiliation: "Hellsing Organization", alias: "Draculina" },
-                { id: 9, cim: "Wingates", affiliation: "Hellsing Organization", alias: "Sir Integra" }
-            ]
+            karakterek: [
+                { id: 1, nev: "Alucard", hovatartozas: "Hellsing Organization", becenev: "Dracula" },
+                { id: 2, nev: "Anderson", hovatartozas: "Iscariot", becenev: "Paladin" },
+                { id: 3, nev: "Captain", hovatartozas: "Millennium", becenev: "The Wolfman" },
+                { id: 4, nev: "Dornez", hovatartozas: "Hellsing Organization", becenev: "Angel of Death" },
+                { id: 5, nev: "Major", hovatartozas: "Millennium", becenev: "Sturmbannführer" },
+                { id: 7, nev: "Schrodinger", hovatartozas: "Millennium", becenev: "The Catboy" },
+                { id: 8, nev: "Victoria", hovatartozas: "Hellsing Organization", becenev: "Draculina" },
+                { id: 9, nev: "Wingates", hovatartozas: "Hellsing Organization", becenev: "Sir Integra" }
+            ],
+            selectedKarakter: null,
         };
     },
+    methods: {
+        selectKarakter(karakter) {
+            this.selectedKarakter = karakter; // Kiválasztott karakter beállítása
+        }
+    },
     computed: {
-        filteredCharacters() {
+        filteredKarakterek() {
             const keresendo = this.keresoSzo ? this.keresoSzo.toLowerCase() : '';
-            return this.characters.filter(character => {
+            return this.karakterek.filter(karakter => {
                 return (
-                    character.cim.toLowerCase().includes(keresendo) ||
-                    character.affiliation.toLowerCase().includes(keresendo) ||
-                    character.alias.toLowerCase().includes(keresendo)
+                    karakter.nev.toLowerCase().includes(keresendo) ||
+                    karakter.hovatartozas.toLowerCase().includes(keresendo) ||
+                    karakter.becenev.toLowerCase().includes(keresendo)
                 );
             });
         }
@@ -56,17 +68,34 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Sötét háttér és kontrasztos színek */
-.container-fluid {
-    margin-top: 20px;
-    padding: 20px;
+<style scope>
+@font-face {
+    font-family: 'Hellsing'; /* Példa betűtípus neve */
+    src: url('/public/Van Helsing.ttf') format('truetype'); /* Fájl elérési út */
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* Flexbox a táblázat középre igazításához */
+h2 {
+    text-align: center;  
+    color: black;
+    font-family: 'Hellsing', serif;
+    font-size: 100px;
+}
+/* Kép stílus nagy méretben */
+.selected-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #8b0000;
+  margin-top: 20px;
+  width: 100%; /* A kép nagy legyen */
+  height: auto;
+}
+
+/* Flexbox a táblázat és a kép középre igazításához */
 .row {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     /* Középre igazítás */
 }
 
@@ -77,6 +106,7 @@ export default {
     /* Vörös szegély */
     background-color: #1a1a1a;
     /* Mélyfekete háttér */
+    text-align: center
 }
 
 /* Fejlécek stílusa */
@@ -147,5 +177,9 @@ body {
 /* Táblázatnál a fejléc sötétebb színe */
 .table thead {
     background-color: #1a1a1a;
+}
+
+.table th {
+    color: red;
 }
 </style>
