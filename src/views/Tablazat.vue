@@ -71,7 +71,7 @@ export default {
 <style scope>
 @font-face {
     font-family: 'Hellsing'; /* Példa betűtípus neve */
-    src: url('/public/Van Helsing.ttf') format('truetype'); /* Fájl elérési út */
+    src: url('/Van Helsing.ttf') format('truetype'); /* Fájl elérési út */
     font-weight: normal;
     font-style: normal;
 }
@@ -127,7 +127,7 @@ h2 {
     color: #f5f5f5;
     /* Halvány fehér betűszín */
     font-family: 'Lora', serif;
-    cursor: url('public/cursor.png'), auto;
+    cursor: url('/cursor.png'), auto;
     transition: background-color 0.3s ease;
 }
 

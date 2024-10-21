@@ -199,7 +199,7 @@ export default {
 .karakter-kartya:hover {
   transform: translateY(-8px);
   box-shadow: 0px 10px 20px rgba(255, 0, 0, 0.3);
-  cursor: url('public/cursor.png'), auto;
+  cursor: url('/cursor.png'), auto;
 }
 
 @media (max-width: 768px) {

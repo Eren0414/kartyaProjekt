@@ -108,7 +108,7 @@ body {
 
 .navbar-links .navbar-link:hover {
   color: #ff0000;
-  cursor: url('public/cursor.png'), auto;
+  cursor: url('/cursor.png'), auto;
 }
 
 /* Aláhúzás az alábbiakban */
