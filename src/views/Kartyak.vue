@@ -193,7 +193,6 @@ export default {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  width: 20%;
   /* Kártyák szélessége */
 }
 
@@ -203,9 +202,17 @@ export default {
   cursor: url('public/cursor.png'), auto;
 }
 
+@media (max-width: 768px) {
+  .karakter-kartyak {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 .karakter-kep {
   width: 100%;
-  height: 200px;
+  height: auto;
+  max-height: 300px;
   object-fit: cover;
   filter: brightness(0.7);
   border-radius: 8px;
