@@ -16,7 +16,7 @@ export default {
     },
     keresoSzoInput(newValue) {
       if (!newValue) {
-        this.keresoSzo = null;  
+        this.keresoSzo = null;
       }
     }
   },
@@ -43,7 +43,6 @@ export default {
   <header>
     <div class="container-fluid my-border my-container navbar-container">
       <h1 class="navbar-title">Kártya Projekt</h1>
-
       <!-- Navigációs sáv -->
       <nav class="my-border p-4 d-flex justify-content-between align-items-center navbar">
         <div class="navbar-links">
@@ -56,11 +55,12 @@ export default {
         <div v-if="!isHomePage" class="d-flex align-items-center search-container" role="search">
           <label for="keresoSzo" class="form-label text-nowrap m-0 search-label"></label>
           <input id="keresoSzo" class="form-control me-2 ms-2 search-input" type="search" aria-label="Keresés"
-            v-model="keresoSzoInput" @keyup.enter="performSearch"/>
-          <button class="btn btn-outline-danger search-button" type="submit"
-            @click="performSearch">Keresés</button>
+            v-model="keresoSzoInput" @keyup.enter="performSearch" />
+          <button class="btn btn-outline-danger search-button" type="submit" @click="performSearch">Keresés</button>
         </div>
       </nav>
+
+      <!-- Vér csepegés GIF a navbar alján -->
     </div>
   </header>
   <RouterView />

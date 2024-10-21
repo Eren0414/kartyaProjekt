@@ -1,34 +1,34 @@
 <template>
-    <div class="container-fluid row">
-      <div class="row justify-content-center align-items-start">
-        <!-- Táblázat a karakterekről -->
-        <div class="col-md-5">
-          <table class="table table-dark table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Név</th>
-                <th scope="col">Hovatartozás</th>
-                <th scope="col">Becenév</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="karakter in filteredKarakterek" :key="karakter.id" @click="selectKarakter(karakter)">
-                <td>{{ karakter.nev }}</td>
-                <td>{{ karakter.hovatartozas }}</td>
-                <td>{{ karakter.becenev }}</td>
-              </tr>
-            </tbody>
-          </table>
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-start">
+            <!-- Táblázat a karakterekről -->
+            <div class="col-12 col-md-5 mb-4">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Név</th>
+                            <th scope="col">Hovatartozás</th>
+                            <th scope="col">Becenév</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="karakter in filteredKarakterek" :key="karakter.id" @click="selectKarakter(karakter)">
+                            <td>{{ karakter.nev }}</td>
+                            <td>{{ karakter.hovatartozas }}</td>
+                            <td>{{ karakter.becenev }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Kép megjelenítése, ha van kiválasztott karakter -->
+            <div class="col-12 col-md-5" v-if="selectedKarakter">
+                <img :src="`/public/${selectedKarakter.nev.toLowerCase()}.png`" alt="Kép" class="selected-image">
+                <h2>{{ selectedKarakter.nev }}</h2>
+            </div>
         </div>
-  
-        <!-- Kép megjelenítése a jobb oldalon, ha kiválasztott karakter van -->
-        <div class="col-md-5" v-if="selectedKarakter">
-          <img :src="`/public/${selectedKarakter.nev.toLowerCase()}.png`" alt="Kép" class="selected-image">
-          <h2>{{ selectedKarakter.nev }}</h2>
-        </div>
-      </div>
     </div>
-  </template>
+</template>
 
 <script>
 export default {
