@@ -61,7 +61,7 @@ karakterek: [
 
 ## könyvtár és állomány szerkezet, modulok
 
-![alt text](image.png)
+![alt text](public/image.png)
 
 > - Könyvtár és állomány szerkezet: A projekt Vue.js komponensekkel van felépítve, a components mappában találhatóak az egyes funkcionális egységek (pl. Kártya és Táblázat).
 
@@ -74,6 +74,7 @@ karakterek: [
 > - Dizájn: A kép igazítása és a stílus megvalósítása itt alapvető vizuális elemekre koncentrál, amelyek a Home oldalt alkotják. 
 
 # Táblázat megvalósítása
+
 
 ### Miért kell a táblázat
 
@@ -90,7 +91,7 @@ karakterek: [
 
 ### Vizualizálás módja, dizájn,
 
-![alt text](image.png)
+![alt text](public/image-4.png)
 
 > Bootstrap és CSS framework segítségével formáztam a táblázatot.
 
@@ -113,14 +114,17 @@ karakterek: [
 
 ### A keresés mechanizmusa
 
-![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](public/image-1.png)
+![alt text](public/image-2.png)
 
 > - A kód keresoSzoInput változó segítségével valósítja meg a keresést. A v-model köti össze az input mezőt a keresési szöveggel, a performSearch() függvény pedig a szűrést végzi.
 
 ## Szűrés
 
 > A szűrés hasonlóan működik, mint a keresés, csak több szempont alapján történik.
+
+![alt text](public/image-3.png)
+![alt text](public/image-5.png)
 
 
 
