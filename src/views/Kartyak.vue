@@ -5,14 +5,14 @@
       @karaterModalReszletKezeles="reszletModalKezelo" class="karakter-kartya">
       <!-- V-slots -->
       <template v-slot:kep>
-        <img :src="karakter.kep" :alt="karakter.cim" class="karakter-kep" />
+        <img v-lazy="karakter.kep" :src="karakter.kep" :alt="karakter.cim" class="karakter-kep" />
       </template>
       <template v-slot:cim>
         <p v-html="keresJelol(karakter.cim)" class="karakter-cim"></p>
       </template>
     </KarakterKartya>
   </div>
-  <div v-if="szurtKarakterek.length == 0" class="null">Nincs találat</div>
+  <p v-if="szurtKarakterek.length == 0" class="null">Nincs találat</p>
 
   <!-- Kartyainfo Modal -->
   <KartyaInfo :cim="keresJelol(kivalasztottKarakter.cim)">
@@ -133,6 +133,9 @@ export default {
       ],
     };
   },
+  mounted() {
+    window.addEventListener('load', this.recalculateLayout);
+  },
   methods: {
     reszletModalKezelo(id) {
       this.kivalasztottKarakter = this.karakterek.filter((k) => k.id == id.id)[0];
@@ -150,6 +153,10 @@ export default {
         return szoveg;
       }
     },
+    recalculateLayout() {
+      // Itt újrarajzolhatod a layoutot a képek betöltése után
+      this.$forceUpdate();
+    }
   },
   computed: {
     szovegFormatum() {
@@ -170,6 +177,13 @@ export default {
       });
     },
   },
+  watch: {
+    karakterek() {
+      this.$nextTick(() => {
+        window.dispatchEvent(new Event('resize')); // Kényszeríti az elrendezést a képek betöltése után
+      });
+    }
+  }
 };
 </script>
 
@@ -194,6 +208,10 @@ export default {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  flex: 1 1 calc(25% - 15px);
+  /* Négy kártya egy sorban nagyobb kijelzőn */
+  max-width: calc(25% - 15px);
+  margin-bottom: 15px;
   /* Kártyák szélessége */
 }
 
@@ -210,6 +228,22 @@ export default {
   }
 }
 
+@media (max-width: 768px) {
+  .karakter-kartya {
+    flex: 1 1 calc(50% - 15px);
+    /* Két kártya egy sorban mobilon */
+    max-width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 576px) {
+  .karakter-kartya {
+    flex: 1 1 100%;
+    /* Egy kártya egy sorban kisebb kijelzőn */
+    max-width: 100%;
+  }
+}
+
 .karakter-kep {
   width: 100%;
   height: auto;
@@ -218,6 +252,7 @@ export default {
   filter: brightness(0.7);
   border-radius: 8px;
   transition: filter 0.3s;
+  object-fit: cover;
 }
 
 .karakter-kartya:hover .karakter-kep {
@@ -233,10 +268,10 @@ export default {
   text-transform: uppercase;
 }
 
-.karakter-kartyak {
+.karakter-kartyak+div {
   font-size: 16px;
   font-weight: bold;
-  color: #ff6347;
+  color: red;
   margin-top: 20px;
 }
 
@@ -279,8 +314,9 @@ span.mark {
 
 .null {
   text-align: center;
-  color: red;
   font-family: 'Old English Text MT', serif;
   font-size: 30px;
+  font-weight: bold;
+  padding: 150px;
 }
 </style>
