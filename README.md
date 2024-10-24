@@ -119,12 +119,9 @@ karakterek: [
 
 > - A kód keresoSzoInput változó segítségével valósítja meg a keresést. A v-model köti össze az input mezőt a keresési szöveggel, a performSearch() függvény pedig a szűrést végzi.
 
-## Szűrés
+### Szűrés
 
-> A szűrés hasonlóan működik, mint a keresés, csak több szempont alapján történik.
-
-![alt text](public/image-3.png)
-![alt text](public/image-5.png)
+> - N/A
 
 
 
