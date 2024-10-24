@@ -43,6 +43,7 @@ export default {
   <header>
     <div class="container-fluid my-border my-container navbar-container">
       <h1 class="navbar-title">Kártya Projekt</h1>
+      <img src="/public/blood-driping.gif" alt="Vércsepegés" class="blood-drip-gif" />
       <!-- Navigációs sáv -->
       <nav class="my-border p-4 d-flex justify-content-between align-items-center navbar">
         <div class="navbar-links">
@@ -59,8 +60,6 @@ export default {
           <button class="btn btn-outline-danger search-button" type="submit" @click="performSearch">Keresés</button>
         </div>
       </nav>
-
-      <!-- Vér csepegés GIF a navbar alján -->
     </div>
   </header>
   <RouterView />
@@ -81,10 +80,21 @@ body {
 .navbar-title {
   color: #ff0000;
   font-family: 'Old English Text MT', serif;
+  position: relative;
   text-shadow: 2px 2px 4px #000;
   text-align: center;
   padding: 15px 0;
   font-size: 2.5rem;
+  z-index: 1;
+}
+
+.blood-drip-gif {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: -32px; /* Igazítsd, hogy közvetlenül a cím alatt legyen */
+  z-index: 0;
+  max-width: 21.2%;
 }
 
 /* Navbar stílusok */

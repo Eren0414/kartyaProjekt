@@ -12,7 +12,7 @@
       </template>
     </KarakterKartya>
   </div>
-  <div v-if="szurtKarakterek.length == 0">Nincs találat</div>
+  <div v-if="szurtKarakterek.length == 0" class="null">Nincs találat</div>
 
   <!-- Kartyainfo Modal -->
   <KartyaInfo :cim="keresJelol(kivalasztottKarakter.cim)">
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+// Karakter osztály
 class Karakter {
   constructor(id = 0, cim = null, kep = null, szoveg = null) {
     this.id = id;
@@ -232,7 +233,7 @@ export default {
   text-transform: uppercase;
 }
 
-.karakter-kartyak+div {
+.karakter-kartyak {
   font-size: 16px;
   font-weight: bold;
   color: #ff6347;
@@ -274,5 +275,12 @@ span.mark {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+}
+
+.null {
+  text-align: center;
+  color: red;
+  font-family: 'Old English Text MT', serif;
+  font-size: 30px;
 }
 </style>
