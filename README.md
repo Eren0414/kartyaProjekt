@@ -9,13 +9,13 @@
 > - Backend: N/A
 > - Frontend: A frontend Vue.js alapon működik, amely egy dinamikus és hatékony komponens alapú keretrendszer.
 > - Dizájn: A frontend UI tervezése Bootstrap és Tailwind CSS alapú. Stíluselemek, mint hover effekt, dinamizmus és megjelenés erőteljesen testreszabott CSS-eken alapulnak.
-> - Adatbázis: A táblázatban tárolt karakterek adatai lekérdezhetőek és megjeleníthetőek.
+> - Adatbázis: N/A
 
 # Menüpontok, funkciók
 
 ## Home
 
-> Az alkalmazás kezdőoldala, ahol rövid bemutatás található.
+> Az alkalmazás kezdőoldala, ahol a navigációs sáv látható külön fülekkel, és egy középre igazított kép ami ábrázolja a sorozat nevét.
 
 ## Táblázat
 
