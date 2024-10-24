@@ -23,7 +23,7 @@
 
             <!-- Kép megjelenítése, ha van kiválasztott karakter -->
             <div class="col-12 col-md-5" v-if="selectedKarakter">
-                <img :src="`/public/${selectedKarakter.nev.toLowerCase()}.png`" alt="Kép" class="selected-image">
+                <img :src="`${selectedKarakter.nev.toLowerCase()}.png`" alt="Kép" class="selected-image">
                 <h2>{{ selectedKarakter.nev }}</h2>
             </div>
         </div>
