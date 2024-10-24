@@ -43,18 +43,18 @@
 
 >  
 ```
-karakterek: [
-        {
-          id: 1,
-          cim: "Alucard",
-          kep: "alucard.png",
-          szoveg: [
-            "Alucard a Kohta Hirano által készített Hellsing-       sorozat három főszereplőjének egyike Sir Integra és Seras Victoria mellett.",
-            "A Hellsing mindkét adaptációjábana japán szubban Jouji Nakata , az angol szinkronban pedig Crispin Freeman ad hangot",
-            "többször is, amíg nem kap határozott választ. Azt sugallják, hogy ő a legerősebb vámpír az életben, és a legerősebb karakter a sorozatban.",
-          ],
-        },
-    ],
+ karakterek: [
+                { id: 1, nev: "Alucard", hovatartozas: "Hellsing Organization", becenev: "Dracula" },
+                { id: 2, nev: "Anderson", hovatartozas: "Iscariot", becenev: "Paladin" },
+                { id: 3, nev: "Captain", hovatartozas: "Millennium", becenev: "The Wolfman" },
+                { id: 4, nev: "Dornez", hovatartozas: "Hellsing Organization", becenev: "Angel of Death" },
+                { id: 5, nev: "Major", hovatartozas: "Millennium", becenev: "Sturmbannführer" },
+                { id: 7, nev: "Schrodinger", hovatartozas: "Millennium", becenev: "The Catboy" },
+                { id: 8, nev: "Victoria", hovatartozas: "Hellsing Organization", becenev: "Draculina" },
+                { id: 9, nev: "Wingates", hovatartozas: "Hellsing Organization", becenev: "Sir Integra" }
+            ],
+            selectedKarakter: null,
+        };
 ``` 
 
 # A program részletezése
