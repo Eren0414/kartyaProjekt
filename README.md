@@ -15,7 +15,7 @@
 
 ## Home
 
-> Az alkalmazás kezdőoldala, ahol rövid bemutatás található.
+> Az alkalmazás kezdőoldala, ahol a navigációs sáv látható külön fülekkel, és egy középre igazított kép ami ábrázolja a sorozat nevét.
 
 ## Táblázat
 
