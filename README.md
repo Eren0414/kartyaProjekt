@@ -67,7 +67,7 @@
 
 ## Home megvalósítása
 
-> A home oldal fő eleme egy középre igazított kép.
+> A **home** oldal fő eleme egy középre igazított kép.
 
 > - Stílus: Az img-container stílus gondoskodik arról, hogy a kép középen jelenjen meg. 
 
