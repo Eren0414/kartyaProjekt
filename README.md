@@ -23,7 +23,7 @@
 
 ## Kártyák
 
-> A kártyák vizualizálják a karakterek részletes információit, mint kép, név, leírás.
+> A **kártyák** vizualizálják a karakterek részletes információit, mint kép, név, leírás.
 
 ## Keresés
 
@@ -43,8 +43,10 @@
 
 >  
 ```
- karakterek: [
-                { id: 1, nev: "Alucard", hovatartozas: "Hellsing Organization", becenev: "Dracula" },
+ karakterek: 
+ {
+  [
+                { id: 1, nev: "Alucard", hovatartozas: "Hellsing  Organization", becenev: "Dracula" },
                 { id: 2, nev: "Anderson", hovatartozas: "Iscariot", becenev: "Paladin" },
                 { id: 3, nev: "Captain", hovatartozas: "Millennium", becenev: "The Wolfman" },
                 { id: 4, nev: "Dornez", hovatartozas: "Hellsing Organization", becenev: "Angel of Death" },
@@ -54,7 +56,8 @@
                 { id: 9, nev: "Wingates", hovatartozas: "Hellsing Organization", becenev: "Sir Integra" }
             ],
             selectedKarakter: null,
-        };
+ }
+ 
 ``` 
 
 # A program részletezése
@@ -67,7 +70,7 @@
 
 ## Home megvalósítása
 
-> A **home** oldal fő eleme egy középre igazított kép.
+> A `home` oldal fő eleme egy középre igazított kép.
 
 > - Stílus: Az img-container stílus gondoskodik arról, hogy a kép középen jelenjen meg. 
 
@@ -78,7 +81,7 @@
 
 ### Miért kell a táblázat
 
-> A táblázat a különböző adatokat jeleníti meg, és segíti a felhasználókat azok rendszerezésében és áttekintésében (pl. karakterek, tulajdonságok, vagy projektek adatai).
+> A **táblázat** a különböző adatokat jeleníti meg, és segíti a felhasználókat azok rendszerezésében és áttekintésében (pl. karakterek, tulajdonságok, vagy projektek adatai).
 
 ### Mely fájlok, a komponensek
 
@@ -106,6 +109,8 @@
 ## Kártyák
 
 > A kártyákat hasonlóan a táblázathoz egy új komponensben valósítottam meg. Ez a karakterkártyák listája, amely minden egyes elem esetén egy kártyát jelenít meg.
+
+![alt text](public/image-6.png)
 
 ## Keresés
 
